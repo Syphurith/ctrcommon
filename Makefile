@@ -23,26 +23,29 @@ SOURCES		:=	source \
 			source/servicepatch
 
 DATA		:=	data
-INCLUDES	:=	include
+INCLUDES	:=	include \
+			include/ctrcommon
 
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH	:=	-march=armv6k -mtune=mpcore -mfloat-abi=hard
+ARCH		:=	-march=armv6k -mtune=mpcore -mfloat-abi=hard
 
-CFLAGS	:=	-g -Wall -Wno-strict-aliasing -O3 -mword-relocations \
+CFLAGS		:=	-g -Wall -Wno-strict-aliasing -O3 -mword-relocations \
 			-fomit-frame-pointer -ffast-math \
 			$(ARCH)
 
-CFLAGS	+=	$(INCLUDE) -DARM11 -D_3DS -DLIBKHAX_AS_LIB
+CFLAGS		+=	$(INCLUDE) -I$(DEVKITPRO)/libctru/include -DARM11 -D_3DS -DLIBKHAX_AS_LIB
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
+CXXFLAGS	:=	$(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
 
-CFLAGS +=       -std=gnu99
+CFLAGS		+=	-std=gnu99
 
-ASFLAGS	:=	-g $(ARCH)
+ASFLAGS		:=	-g $(ARCH)
 
-LIBS	:= -lctru -lm
+LIBS		:= 	-lctru -lm
+
+AEMSTRO		:=	$(DEVKITPRO)/aemstro
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
