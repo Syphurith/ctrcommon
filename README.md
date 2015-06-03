@@ -1,6 +1,12 @@
 <b><center>ctrcommon</center></b>
 ==========
 
-Common utilities for use in 3DS homebrew.
+###Common utilities for use in 3DS homebrew.
 
-Requires [devkitARM](http://sourceforge.net/projects/devkitpro/files/devkitARM/), [aemstro](https://github.com/smealum/aemstro), and [ctrulib](https://github.com/smealum/ctrulib) to build. Run 'make' to build, and run 'make install' to install it to your devkitPro directory.
+Compilation Requirements
+
+* [devkitARM](http://sourceforge.net/projects/devkitpro/files/devkitARM/) installed, latest version preferred.
+* [aemstro](https://github.com/smealum/aemstro) clone this to your devkitpro directory, such as `D:\STATION\devkitPro\aemstro`.
+* [ctrulib](https://github.com/smealum/ctrulib) clone this, and build it from source, and `make install` to install it to your devkitPro directory.
+
+Run 'make' to build, and run 'make install' to install it to your devkitPro directory.
